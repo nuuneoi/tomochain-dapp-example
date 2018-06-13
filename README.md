@@ -53,12 +53,18 @@ To create a TomoChain wallet, just do the following easy steps:
 
 You now have a wallet! Address and balance will be shown on the top left area as you supposes to already see it right now.
 
+![TomoWallet](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/tomowallet1.jpg)
 
 
 Easy, huh?
 
-# Obtain Wallet Backup Key
+# Obtain Wallet's Backup Key
+
+Backup Key is a mnemonic seed representing the private spend key. It is pretty important. Without it, you will not be able to spend the balance in your address. Just don't forget to write it down somewhere.
 
 1) Browse to https://wallet.tomocoin.io/
-2) Click on **three dots menu** at the right top position and click at **SHOW YOUR BACKUP KEY**.
-3) 
+2) Click on **three dots menu** at the right top position and click at **SHOW YOUR BACKUP KEY**. You will see the dialog popped up like this.
+
+3) Copy the code Write it down somewhere. We will need to use it in our source code in the smart contract deployment step.
+
+**Please note that this mnemonic seed have to be kept private**. Don't give it to anyone or post it to the public space otherwise your might lose the entire balance to the bad guy.
