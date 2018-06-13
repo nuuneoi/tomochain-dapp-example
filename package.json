@@ -1,0 +1,25 @@
+{
+  "name": "tomochaindappexample",
+  "version": "1.0.0",
+  "description": "Simple dApp Example for TomoChain",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuuneoi/tomochain-dapp-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuuneoi/tomochain-dapp-example/issues"
+  },
+  "homepage": "https://github.com/nuuneoi/tomochain-dapp-example",
+  "dependencies": {
+    "truffle-hdwallet-provider": "0.0.5"
+  }
+}
