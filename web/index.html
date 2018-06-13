@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TomoChain dApp Basic Example</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="web3.min.js"></script>
+</head>
+<body>
+    <!-- Form -->
+    <div class="container">
+        <h1>TomoChain dApp Basic Example</h1>
+        <h2 id="balance">Current Balance = <span id="currentBalance"></span></h2>
+        <hr/>
+        <br/>
+        <label for="newBalance" class="col-lg-2 control-label"><strong>New Balance</strong></label>
+        <input id="newBalance" type="number" value="0" style="display: inline-block">
+        <button id="button" style="display: inline-block" onclick="javascript:setBalance()">Set New Balance</button>
+        <br/>
+        <br/>
+        <label><strong>Status</strong></label>
+        <h4 id="status"></h4>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- Script -->
+    <script>
+        // Call getBalance from Smart Contract
+        function getBalance() {
+          addStatusLine("");
+          addStatusLine("calling getBalance()");
+          SimpleContract.getBalance(function(errorGet, resultGet) {
+            addStatusLine("Current balance = " + resultGet);
+            document.getElementById('currentBalance').innerText = resultGet;
+          });
+        }
+
+        function setBalance() {
+          newBalance = parseInt(document.getElementById("newBalance").value);
+          SimpleContract.setBalance(newBalance, function(error, result) {
+            if (error)
+              return;
+            addStatusLine("");
+            addStatusLine("calling setBalance(" + newBalance + ")");
+            // Start watching for TxHash receipt (confirmed)
+            isWatching = true;
+            startWatchingTime = new Date();
+            txHash = result;
+            addStatusLine("TxHash = <a href='https://explorer-testnet.tomochain.com/txs/" + result + "' target='_blank'>" + result + "</a>");
+          });
+        }
+
+        function addStatusLine(text) {
+          document.getElementById("status").innerHTML = text + "<br/><br/>" + document.getElementById("status").innerHTML;
+        }
+
+        var thisJS = this;
+        var isWatching = false;
+        var startWatchingTime = 0;
+        var txHash = null;
+
+        // Use currentProvider as a web3 provider eg. Metamask
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        }
+        // Get default TomoChain address
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
+        // TODO: Replace your SimpleContract abi here
+        var abi = [];
+        // TODO: Replace your SimpleContract contract address here
+        var contractAddress = '';
+
+        // Create an interface to SimpleContract on TomoChain
+        var SimpleContractContract = web3.eth.contract(abi);
+        var SimpleContract = SimpleContractContract.at(contractAddress);
+
+        // Last block monitoring
+        web3.eth.filter('latest', function(error, result) {
+          if (!error) {
+            if (isWatching && txHash && web3.eth.getTransactionReceipt(txHash, function(error, receipt) {
+              // If TxHash has been confirmed
+              if (receipt) {
+                // Stop watching
+                isWatching = false;
+                var currentTime = new Date();
+                addStatusLine("TxHash has been confirmed!");
+                addStatusLine("Time spent = " + (currentTime - startWatchingTime) / 1000 + "seconds");
+                // Refresh balance
+                getBalance();
+              }
+            }));
+          } else {
+            console.error(error)
+          }
+        });
+
+        // Get balance at the first time page loaded
+        getBalance();
+    </script>
+
+</body>
+</html>
+
