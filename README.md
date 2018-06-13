@@ -40,7 +40,7 @@ $ git clone git@github.com:nuuneoi/tomochain-dapp-example.git
 Install required npm package.
 
 ```
-cd tomochain-dapp-example
+$ cd tomochain-dapp-example
 $ npm install
 ```
 
