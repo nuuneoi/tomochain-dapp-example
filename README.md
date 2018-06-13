@@ -244,3 +244,34 @@ The deployment steps are actually simply a set of transactions so we can see the
 No action item on this. Just want you to make sure that your contract deployment has successfully been done on TomoChain testnet.
 
 You may already notice that how fast the deployment step above was. It used just around *20 seconds* to finish or *just 5 seconds for each transaction created to be confirmed*. Super fast !
+
+
+# Connect Metamask to TomoChain testnet.
+
+Metamask will be used as a provider to create a transaction and interact with smart contract on the testnet. (As I already mentioned above, everything that works with Ethereum will also work with TomoChain).
+
+However, TomoChain is not natively supported on Metamask. We need to manually define the custom rpc server for TomoChain testnet. Here is the steps to do:
+
+1) Install [Metamask for Chrome](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
+2) Click on the Metamask icon on address bar. Click on the top left menu and choose **Custom RPC**
+
+![Custom RPC](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/customrpc1.jpg)
+
+3) Type `https://testnet.tomochain.com` in the RPC textbox and then click **Save**
+
+![TestnetTomoChain](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/testnettomochainmm.jpg)
+
+4) Click on **Restore from seed phrase** and put the mnemonic from above step to the **Wallet Seed** text area. Also don't forget to set the password to protect the wallet from people who share the computer with you.
+
+5) You should now be good. The wallet supposes to be shown correctly in both address and balance.
+
+![TestnetTomoChain](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/metamask2.jpg)
+
+Please note that the unit of the wallet here is TOMO but since Metamask does not know TOMO so it just shows as ETH as you can see above.
+
+Congratulations! Metamask is now ready to interact with TomoChain testnet!
+
+
+# Create a Front-End Website Interacting with the Smart Contract
+
+aaa
