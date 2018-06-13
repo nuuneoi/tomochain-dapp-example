@@ -68,56 +68,9 @@
         web3.eth.defaultAccount = web3.eth.accounts[0];
 
         // TODO: Replace your SimpleContract abi here
-var abi = [
-  {
-    "inputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "balance",
-        "type": "uint256"
-      }
-    ],
-    "name": "BalanceUpdated",
-    "type": "event"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "newBalance",
-        "type": "uint256"
-      }
-    ],
-    "name": "setBalance",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getBalance",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  }
-];
+        var abi = [];
         // TODO: Replace your SimpleContract contract address here
-        var contractAddress = '0xb9cb9aa779c0ae4d6fe8a2292fc61233c5cad4be';
+        var contractAddress = '';
 
         // Create an interface to SimpleContract on TomoChain
         var SimpleContractContract = web3.eth.contract(abi);

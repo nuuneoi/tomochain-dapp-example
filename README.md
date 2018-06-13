@@ -274,4 +274,101 @@ Congratulations! Metamask is now ready to interact with TomoChain testnet!
 
 # Create a Front-End Website Interacting with the Smart Contract
 
-aaa
+Simple demo website used to interact with the deployed smart contract has also come along with this repository. You can find it in `web` directory. The only file you need to work with is `index.html`. The web is almost ready to run but still need some modification. Please do the following steps.
+
+1) Find the `abi` json value from `build/contracts/SimpleContract.json`, copy it and replace the abi value in `index.html` with that json array, for example,.
+
+```javascript
+  var abi = [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceUpdated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newBalance",
+          "type": "uint256"
+        }
+      ],
+      "name": "setBalance",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ];
+```
+
+2) Replace the contract address with your own SimpleContract contract address, for example,
+
+```javascript
+  var contractAddress = '0xb9cb9aa779c0ae4d6fe8a2292fc61233c5cad4be';
+```
+
+3) Source code is now ready. Now it is time to spin up the http server by going to Terminal and type the following command.
+
+```
+$ cd web
+$ http-server .
+```
+
+The server is now launched on port 8080. You can now browse to the web created through browser at [http://localhost:8080]() and give a test!
+
+## Test
+
+Once opened, front-end web will immediately call `getBalance()` function and show the result in the above area.
+
+![test1](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/test1.jpg)
+
+You can input the new balance you need and click at **Set New Balance** button to set the new value.
+
+![test2](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/test2.jpg)
+
+And since this operation requires the Metamask to create and sign a transaction for you, Metamask will be automatically launched with the predefined parameter. You could just simply click on **SUBMIT** button.
+
+![test3](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/test3.jpg)
+
+The transaction progress will be updated in the below area. You can also view the transaction information from the TxHash row if you want to.
+
+![test4](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/test4.jpg)
+
+***It is worth noting that the transaction is confirmed in just 4-5 seconds which is super fast!!***
+
+Congratulations! Your first smart contract is now deployed on TomoChain testnet and you can also interact with it through simple web3.js provider on web front-end!
+
+Sorry for not going over the front-end source code because I am afraid that it would be too much. However, the source code is not so complicated though. Please feel free to review it yourself!
+
+
+# Author
+
+Tutorial created by Sittiphol Phanvilai (nuuneoi)
