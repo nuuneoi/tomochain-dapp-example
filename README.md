@@ -106,7 +106,7 @@ Now your wallet has an enough balance to do the entire things in this tutorial s
 
 The source code in this git repository is written in Truffle framework which is pretty handy. You can compile and do things in just one command line.
 
-### Look at the source code
+## Look at the source code
 
 This is a Solidity source code used in this tutorial. You can find it in `contracts/SimpleContract.sol` file.
 
@@ -141,7 +141,7 @@ contract SimpleContract {
 
 This smart contract is super basic. It allows you to set the public variable `balance` through `setBalance` function and you can retrieve the balance by calling `getBalance`. If you are already familiar with Solidity, you should understand the whole code in no time.
 
-### Compile
+## Compile
 
 To compile the source code, just type this command in the repository directory.
 
@@ -159,7 +159,7 @@ Writing artifacts to ./build/contracts
 
 Now your smart contract has already been compiled. The compiled code are stored in the `build` directory. You can go check it out if you want to.
 
-### Setup Deployment Wallet
+## Setup Deployment Wallet
 
 Now it is almost ready to deploy to the testnet. Anyway, we need to specify the TomoChain wallet to deploy the smart contract first. Of course, the wallet we are going to use is the one that we created in the previous step. Here is the steps to 
 
@@ -200,7 +200,7 @@ var mnemonic = '<PUT YOUR WALLET BACKUP KEY HERE>';
 Done. Please note that the `tomotestnet` network will be used to deploy the smart contract we created. However, if you are familiar with Ganache, you could use the `development` network to do the local test as well if you want to.
 
 
-### Deploy
+## Deploy
 
 Now it is time to deploy the smart contract to the TomoChain testnet! You can deploy the compiled smart contract using the following command.
 
@@ -235,7 +235,7 @@ It is worth noting that the long hex code are the `TxHash` while the short one a
 
 Alright, although there are a lot of alien stuff printed out right now but actually the only address that we need to use in the further step is `0xb9cb9aa779c0ae4d6fe8a2292fc61233c5cad4be` which is the contract address of SimpleContract we created. ***Please note that your contract address will be different than mine so please ignore my address and use yours instead.***
 
-### Go Check the Deployment Transaction
+## Go Check the Deployment Transaction
 
 The deployment steps are actually simply a set of transactions so we can see them on block explorer. So ... let's go check them out! Just simply go to the Tomoscan page and enter your address. 4 new transactions would be shown like below.
 
