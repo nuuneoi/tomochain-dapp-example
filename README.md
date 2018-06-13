@@ -17,6 +17,8 @@ To understand to whole things clearly, you need to have an knowledge on **Solidi
 
 # What is TomoChain?
 
+![TomoChain](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/tomochain.jpg)
+
 TomoChain is an Ethereum fork that performs significantly better. Its block time was reduced from 15s to just 2s and the transaction fee is zero.
 
 And since it is an Ethereum fork, any development kit or programming language that works for Ethereum will also works for TomoChain!
