@@ -4,6 +4,7 @@ This repository contains the Solidity smart contract codes and the full instruct
 
 * Setup Truffle, the most popular development framework for Ethereum which also works perfectly for TomoChain.
 * Create a TomoChain wallet.
+* Obtain Wallet's Backup Key
 * Request fund to the created TomoChain wallet.
 * Compile and deploy the created smart contract to TomoChain testnet.
 * Connect Metamask to TomoChain testnet.
@@ -65,6 +66,15 @@ Backup Key is a mnemonic seed representing the private spend key. It is pretty i
 1) Browse to https://wallet.tomocoin.io/
 2) Click on **three dots menu** at the right top position and click at **SHOW YOUR BACKUP KEY**. You will see the dialog popped up like this.
 
-3) Copy the code Write it down somewhere. We will need to use it in our source code in the smart contract deployment step.
+![Seed Key](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/seedkey1.jpg)
+
+3) Copy the words on the last row and write them down somewhere. (These words are also needed to be put in our source code in the smart contract deployment step below.)
 
 **Please note that this mnemonic seed have to be kept private**. Don't give it to anyone or post it to the public space otherwise your might lose the entire balance to the bad guy.
+
+# Request fund
+
+Fund is needed to do stuff like smart contract deployment. Don't worry, it does not cost you any buck since it is the testnet! You can simply request some fund to be transferred to your wallet in few easy steps:
+
+1) Browse to https://faucet.tomochain.com/
+2) 
