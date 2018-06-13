@@ -73,7 +73,7 @@ Backup Key is a mnemonic seed representing the private spend key. It is pretty i
 
 3) Copy the words on the last row and write them down somewhere. (These words are also needed to be put in our source code in the smart contract deployment step below.)
 
-**Please note that this mnemonic seed have to be kept private**. Don't give it to anyone or post it to the public space otherwise your might lose the entire balance to the bad guy.
+**Please note that this mnemonic seed has to be kept private**. Don't give it to anyone or post it to the public space otherwise your might lose the entire balance to the bad guy.
 
 You could now close the wallet tab since we will not use this site anymore. We just need it to generate an address and obtain the associated backup key.
 
