@@ -234,3 +234,11 @@ Don't be surprise if those hex code are not the same as mine since they would be
 It is worth noting that the long hex code are the `TxHash` while the short one are `contract address`. If you want to play around, please feel free to copy those hex code in block explorer and see the details. Anyway, I will not go over those stuffs since it is too details.
 
 Alright, although there are a lot of alien stuff printed out right now but actually the only address that we need to use in the further step is `0xb9cb9aa779c0ae4d6fe8a2292fc61233c5cad4be` which is the contract address of SimpleContract we created. ***Please note that your contract address will be different than mine so please ignore my address and use yours instead.***
+
+### Go Check the Deployment Transaction
+
+The deployment steps are actually simply a set of transactions so we can see them on block explorer. So ... let's go check them out! Just simply go to the Tomoscan page and enter your address. 4 new transactions would be shown like below.
+
+![Balance](https://github.com/nuuneoi/tomochain-dapp-example/raw/master/img/contracttx1.jpg)
+
+No action item on this. Just want you to make sure that your contract deployment has successfully been done on TomoChain testnet.
