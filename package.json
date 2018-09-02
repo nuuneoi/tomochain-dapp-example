@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/nuuneoi/tomochain-dapp-example",
   "dependencies": {
-    "truffle-hdwallet-provider": "0.0.5"
+    "ethereumjs-abi": "^0.6.5",
+    "truffle-hdwallet-provider": "0.0.6"
   }
 }

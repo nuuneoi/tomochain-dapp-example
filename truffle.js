@@ -2,7 +2,7 @@
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
 
-var mnemonic = '<PUT YOUR WALLET BACKUP KEY HERE>';
+var mnemonic = 'valve thrive nephew immune coast believe genius few right corn rule empty';
 
 module.exports = {
   networks: {
@@ -17,6 +17,7 @@ module.exports = {
         return new HDWalletProvider(mnemonic, 'https://testnet.tomochain.com');
       },
       gas: 1000000,
+      gasPrice: 1,
       network_id: 89
     }
   }
