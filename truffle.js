@@ -17,6 +17,7 @@ module.exports = {
         return new HDWalletProvider(mnemonic, 'https://testnet.tomochain.com');
       },
       gas: 1000000,
+      gasPrice: 1,
       network_id: 89
     }
   }
