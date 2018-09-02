@@ -2,7 +2,7 @@
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
 
-var mnemonic = '<PUT YOUR WALLET BACKUP KEY HERE>';
+var mnemonic = 'valve thrive nephew immune coast believe genius few right corn rule empty';
 
 module.exports = {
   networks: {
